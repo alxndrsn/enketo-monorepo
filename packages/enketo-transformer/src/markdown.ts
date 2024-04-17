@@ -51,9 +51,9 @@ export const markdownToHTML = (text: string): string => {
             '<a href="$2" rel="noopener" target="_blank">$1</a>'
         )
         // headers
-        .replace(/^\s*(#{1,6})\s?([^#][^\n]*)(\n|$)/gm, createHeader)
+        .replace(/^\s*(#{1,6})\s?([^#][^\n]*)$/gm, createHeader)
         // unordered lists
-        .replace(/^((\*|\+|-) (.*)(\n|$))+/gm, createUnorderedList)
+        .replace(/^((\*|\+|-) (.*)$)+/gm, createUnorderedList)
         // ordered lists, which have to be preceded by a newline since numbered labels are common
         .replace(/(\n([0-9]+\.) (.*))+$/gm, createOrderedList)
         // newline characters followed by <ul> tag
