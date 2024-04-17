@@ -506,6 +506,8 @@ function _createNewEnketoId(
  * @return {number} difference in launch date as a number
  */
 function _ascendingLaunchDate(a, b) {
+    // eslint-disable-next-line no-console
+    console.log('_ascendingLaunchDate()', JSON.stringify({ a, b }, null, 2));
     return new Date(a.launchDate) - new Date(b.launchDate);
 }
 
